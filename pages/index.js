@@ -20,8 +20,8 @@ export default function Home() {
   const [apiMovieData, setApiMovieData] = useState(null)
 
   useEffect(() => {
-    axios.get('https://imdb-api.com/en/API/Top250Movies/k_e41cox2u').then((data) => { //Connect to the IMDb API and get the top 250 movies
-      console.log(data) //Print the list of movies to the screen
+    axios.get('https://imdb-api.com/en/API/Top250Movies/k_e41cox2u').then((data) => { //Connect to the IMDb API and get the top 250 movies to be printed to the screen
+      console.log(data)
       data.data.items.splice(20) //Cut the list down from 250 to 20
       setApiMovieData(data.data.items)
     })
