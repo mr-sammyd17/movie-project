@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import { useState } from 'react';
 
 
-  // const [apiMovieData, setApiMovieData] = useState(null) //Create a button to get 4 movies at a time
+  // const [apiMovieData, setApiMovieData] = useState(null) //Sort array of movies to display 4 at a time
 
 export const Gallery = ({movieData}) => {
 return (

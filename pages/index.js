@@ -18,14 +18,14 @@ import React from 'react'
 
 export default function Home() {
   const [apiMovieData, setApiMovieData] = useState(null)
-  const [count, setCount] = useState(0) //create a counter and set it to 0
+  const [count, setCount] = useState(0) //create a counter and set it to 0 - https://dev.to/estheragbaje/how-to-use-react-hooks-to-create-a-counter-component-1bmp
 
-  const handleIncrement = () => {
-    setCount(prevCount => prevCount + 1); //Add 1 to the current value of count
+  const Next = () => {
+    setCount(prevCount => prevCount + 4); //Add 4 to the current value of count
   }
 
-  const handleDecrement = () => {
-    setCount(prevCount => prevCount - 1); //Remove 1 from the current value of count
+  const Previous = () => {
+    setCount(prevCount => prevCount - 4); //Remove 4 from the current value of count
   }
 
   useEffect(() => {
@@ -38,15 +38,11 @@ export default function Home() {
 
   console.log('Rendering')
   return (
-    //This div holds the page heading
-    <div style = {{background: 'green'}}>
-          <div>
-      <div>
-        <button onClick={handleDecrement}>-</button>
-        <h5>Count is {count}</h5>
-        <button onClick={handleIncrement}>+</button>
-      </div>
-      <button onClick={() => setCount(0)}>Reset</button>
+    //The 1st div holds the page heading
+    //The 2nd div shows the movies
+    //The 3rd div holds the counter buttons
+    <div style = {{background: 'green'}}> 
+    <div>
     </div>
       <Head>
         <title></title>
@@ -55,6 +51,11 @@ export default function Home() {
       </Head>
         <h2 style={{margin: 'unset'}}><u>This page lists the top 20 movies according to IMDb</u></h2>
       <Gallery movieData={apiMovieData}/>
+      <div style = {{background: 'grey', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+        <button onClick={Next}>Next</button> 
+        <h5>Count is {count}</h5>
+        <button onClick={Previous}>Previous</button>
+      </div>
     </div>
   )
 }
