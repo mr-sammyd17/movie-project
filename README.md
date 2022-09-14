@@ -1,3 +1,5 @@
+--**THE CODE IN THIS BRANCH DISPLAYS THE TOP 20 IMDb MOVIES WITH SOME INFORMATION ON THE PAGE ALL AT ONCE**--
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
