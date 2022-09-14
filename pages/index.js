@@ -30,7 +30,7 @@ export default function Home() {
   console.log('Rendering')
   return (
     <div style= {{background: 'blue'}}>
-      <h2 style={{margin: 'unset'}}><u>This page lists the top 20 movies according to IMDb</u></h2>
+      <h2 style={{margin: 'unset', color: 'white'}}><u>This page lists the top 20 movies according to IMDb</u></h2>
       <div className={styles.container} class={'rounded-t-full'} style={{display: 'flex', flexDirection: 'row', alignItems: 'center' /*, justifyContent: 'space-between'*/, background: 'grey', /*flexWrap: 'wrap'*/}}>
       {apiMovieData ? apiMovieData.map((movie, index) => {
         return <MovieCards movie={movie} index={index} key={index} />
