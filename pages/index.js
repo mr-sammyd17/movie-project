@@ -29,7 +29,7 @@ export default function Home() {
         return prevCount - 1
       }
       
-    }); //Remove 4 from the current value of count
+    }); //Remove 1 from the current value of count
   }
 
   const Next = () => {
@@ -40,16 +40,8 @@ export default function Home() {
       else{
         return prevCount + 1
       }
-    }); //Add 4 to the current value of count
+    }); //Add 1 to the current value of count
   }
-
-  // if (count == 1 || count < 1){
-  //   count = 1
-  // }
-
-  // if (count == 4 || count > 4){
-  //   count = 4
-  // }
 
   useEffect(() => {
     axios.get('https://imdb-api.com/en/API/Top250Movies/k_e41cox2u').then((data) => { //Connect to the IMDb API and get the top 250 movies
