@@ -2,10 +2,10 @@
 import Image from 'next/image'
 
 export const MovieCards = ({movie, index}) => {
-    const idx = index+1 /*This creates the number used as part of the title listing for each individual movie*/
+   // const idx = index+1 /*This creates the number used as part of the title listing for each individual movie*/
     return (
         <div style={{ height: '500px', width: '300px', background: 'yellow', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', padding: '5px'}}>
-            <h4 style = {{textAlign: 'center'}}>{idx + ' -' + ' ' + movie.fullTitle}</h4>
+            <h4 style = {{textAlign: 'center'}}>{movie.rank + ' -' + ' ' + movie.fullTitle}</h4>
             <div style={{height:'300px', position:'relative', width:'218px', background: 'red'}}>
                 <Image src={movie.image} alt={movie.fullTitle} layout={'fill'} objectFit={'contain'} objectPosition={'center'} style={{width:'300px', height:'auto', borderRadius:'25px'}}/>
             </div>

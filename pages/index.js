@@ -18,20 +18,43 @@ import React from 'react'
 
 export default function Home() {
   const [apiMovieData, setApiMovieData] = useState(null)
-  const [count, setCount] = useState(0) //create a counter and set it to 0 - https://dev.to/estheragbaje/how-to-use-react-hooks-to-create-a-counter-component-1bmp
-
-  const Next = () => {
-    setCount(prevCount => prevCount + 4); //Add 4 to the current value of count
-  }
+  var [count, setCount] = useState(1) //create a counter and set it to 1 - https://dev.to/estheragbaje/how-to-use-react-hooks-to-create-a-counter-component-1bmp
 
   const Previous = () => {
-    setCount(prevCount => prevCount - 4); //Remove 4 from the current value of count
+    setCount(prevCount => {
+      if (prevCount == 1){
+        return prevCount
+      }
+      else{
+        return prevCount - 1
+      }
+      
+    }); //Remove 4 from the current value of count
   }
+
+  const Next = () => {
+    setCount(prevCount => {
+      if (prevCount == 4){
+        return prevCount
+      }
+      else{
+        return prevCount + 1
+      }
+    }); //Add 4 to the current value of count
+  }
+
+  // if (count == 1 || count < 1){
+  //   count = 1
+  // }
+
+  // if (count == 4 || count > 4){
+  //   count = 4
+  // }
 
   useEffect(() => {
     axios.get('https://imdb-api.com/en/API/Top250Movies/k_e41cox2u').then((data) => { //Connect to the IMDb API and get the top 250 movies
       console.log(data)
-      data.data.items.splice(20) //Cut the list down from 250 to 20
+      // data.data.items.splice(20) //Cut the list down from 250 to 20
       setApiMovieData(data.data.items)
     })
   }, [])
@@ -50,11 +73,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <h2 style={{margin: 'unset'}}><u>This page lists the top 20 movies according to IMDb</u></h2>
-      <Gallery movieData={apiMovieData}/>
+      <Gallery movieData={apiMovieData} pageCount={count}/>
       <div style = {{background: 'grey', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-        <button onClick={Next}>Next</button> 
-        <h5>Count is {count}</h5>
-        <button onClick={Previous}>Previous</button>
+        <button onClick={Previous}>Previous</button> 
+        <h5>You are seeing the movies in view {count} of 4</h5>
+        <button onClick={Next}>Next</button>
       </div>
     </div>
   )
