@@ -8,6 +8,6 @@ return (
     {movieData ? movieData.slice((pageCount-1)*5,pageCount*5).map((movie, index) => {
       return <MovieCards movie={movie} index={index} key={index} />
     }): null}
-    </div> 
+    </div> //The '.slice' method on the movieData array is splitting the list of 250 movies into sets of 5
 )
 }
