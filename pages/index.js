@@ -25,7 +25,7 @@ export default function Home() {
       if (prevCount == 1){
         return prevCount
       }
-      else{
+      else{ 
         return prevCount - 1
       }
       
