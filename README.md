@@ -1,8 +1,4 @@
-***WORK IN PROGRESS***
-
-
-
---**THE CODE IN THIS BRANCH WILL DISPLAY THE TOP 20 IMDb MOVIES WITH SOME INFORMATION ON THE PAGE A FEW MOVIES AT A TIME IN A GALLERY/SLIDESHOW FORMAT**--
+--**THIS CODE DISPLAYS 5 MOVIES AT A TIME ON THE PAGE FROM THE TOP 20 LIST AND ALLOWS USERS TO CYCLE THROUGH THE LIST USING BUTTONS**--
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
