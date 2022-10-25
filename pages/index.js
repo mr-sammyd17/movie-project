@@ -24,7 +24,12 @@ export default function Home() {
   const handleSearchChange = (event) => {
     //console.log(event.target.value)
     setSearchText(event.target.value)
-    //setSearchText = searchText.toLowerCase
+    setSearchText (setSearchText => {
+      var lower = searchText.toLowerCase
+      if (movieData.fullTitle.includes(lower)){
+        //Add logic here
+      }
+    })
     console.log(searchText.toLowerCase)
   }
 
