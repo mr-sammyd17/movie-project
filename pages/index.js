@@ -61,7 +61,7 @@ export default function Home() {
 
   console.log('Rendering')
   // const result = words.filter(word => word.length > 6);
-  const filteredMovies = apiMovieData.filter(movieData => movieData.fullTitle.length>1) //Create a filter to shift through the movie array based on the full title
+  const filteredMovies = apiMovieData.filter(movieData => movieData.fullTitle.length>0) //Create a filter to shift through the movie array based on the full title
   return (
     //The 1st div holds the page heading
     //The 2nd div shows the movies
